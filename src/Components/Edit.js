@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 const Edit = (id) => {
-    // console.log(id);
     let initform = {
         title: " ",
         description: " ",
@@ -12,11 +11,9 @@ const Edit = (id) => {
     }
     const [form, setForm] = useState(initform);
     useEffect(() => {
-        // console.log("id", id.id);
         axios.get(`https://blogtestwebinar.herokuapp.com/blog/${id.id}`)
             .then(res => {
                 setForm(res.data);
-                // console.log("data", res.data);
             })
     }, [id.id]);
     const handleChange = (e) => {
@@ -26,10 +23,9 @@ const Edit = (id) => {
     };
     const handleSubmit = (e) => {
         e.preventDefault();
-        // console.log(form);
         axios.patch(`https://blogtestwebinar.herokuapp.com/blog/update-Post/${id.id}`, { ...form })
             .then(res => {
-                console.log("successfully edited");
+                console.log("Edit was successful!");
             }
             );
 
