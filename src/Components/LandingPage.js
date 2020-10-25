@@ -6,13 +6,7 @@ function LandingPage() {
     return (
         <div className="App">
             <header className="App-header" >
-                {/* <h1>Welcome to the Webinar</h1> */}
                 <p> Let's create a web application based on react and nestjs</p>
-                {/* <a
-                    href="/view"
-                    className="Welcome-btn">
-                    Enter
-                </a> */}
                 <a
                     className={`w-1/8 px-8 py-2 text-black outline bg-blue-400 rounded ml-10 `}
                     href="/view">

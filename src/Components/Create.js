@@ -18,10 +18,9 @@ const Create = () => {
     };
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(form);
         axios.post("https://blogtestwebinar.herokuapp.com/blog/post", { ...form })
             .then(res => {
-                console.log("successfully posted");
+                console.log("Posted Successfully!");
                 navigate("/view");
             }
             );

@@ -14,23 +14,18 @@ const ViewPost = (id) => {
     const [data, setData] = useState(initvalue);
 
     useEffect(() => {
-        // console.log("id", id.id);
         axios.get(`https://blogtestwebinar.herokuapp.com/blog/${id.id}`)
             .then(res => {
                 setData(res.data);
-                // console.log("data", res.data);
             })
     }, [id.id]);
-    // console.log("dattaaaa", data.title);
     const deletePost = (e) => {
         e.preventDefault();
 
         axios.delete(`https://blogtestwebinar.herokuapp.com/blog/${id.id}`)
             .then(res => {
-                // console.log(res);
-                // console.log(res.status);
                 if (res.status === 200) {
-                    console.log("delete successfull");
+                    console.log("deleted successfully");
                     navigate("/view");
                 }
             })
@@ -74,7 +69,6 @@ const ViewPost = (id) => {
                             </dd>
                         </div>
                         <div className="mt-2 ">
-                            {/* {console.log("dt", data.id)} */}
                             <a
                                 className={`w-1/8 px-1 py-0 text-black outline bg-blue-400 rounded mr-10`}
                                 href={`/edit/${data.id}`}>
